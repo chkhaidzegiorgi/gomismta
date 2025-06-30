@@ -106,7 +106,7 @@
       color: #333;
     }
     header {
-      background: url('hero.jpg') center/cover no-repeat;
+      background: url('photos/house/exterior1.jpg') center/cover no-repeat;
       height: 90vh;
       display: flex;
       flex-direction: column;
@@ -464,18 +464,18 @@
     
     // Update Open Graph URLs with current domain
     document.getElementById('og-url').content = currentUrl;
-    document.getElementById('og-image').content = `${currentUrl}/hero.jpg`;
+    document.getElementById('og-image').content = `${currentUrl}/photos/house/exterior1.jpg`;
     
     // Update Twitter image with current domain
-    document.getElementById('twitter-image').content = `${currentUrl}/hero.jpg`;
+    document.getElementById('twitter-image').content = `${currentUrl}/photos/house/exterior1.jpg`;
     
     // Update structured data
     const structuredData = document.getElementById('structured-data');
     const data = JSON.parse(structuredData.textContent);
     data.url = canonicalUrl; // Use main domain for structured data
     data.image = [
-      `${currentUrl}/hero.jpg`,
       `${currentUrl}/photos/house/exterior1.jpg`,
+      `${currentUrl}/photos/house/view1.png`,
       `${currentUrl}/photos/house/interior1.avif`
     ];
     structuredData.textContent = JSON.stringify(data, null, 2);
