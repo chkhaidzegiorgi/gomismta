@@ -16,8 +16,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Cotria Cottage Gomismta | Mountain Retreat in Georgia">
   <meta property="og:description" content="Escape to Cotria Cottage in Gomismta - a cozy mountain retreat with breathtaking views, 4 bedrooms, and modern amenities. Book your stay today!">
-  <meta property="og:image" content="https://gomimountain.ge/hero.jpg">
-  <meta property="og:url" content="https://gomimountain.ge">
+  <meta property="og:image" id="og-image" content="">
+  <meta property="og:url" id="og-url" content="">
   <meta property="og:site_name" content="Gomi Mountain Cottage">
   <meta property="og:locale" content="en_US">
   
@@ -25,20 +25,28 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cotria Cottage Gomismta | Mountain Retreat Georgia">
   <meta name="twitter:description" content="Book your mountain escape at Cotria Cottage in Gomismta, Georgia. Stunning views, 4 bedrooms, pet-friendly.">
-  <meta name="twitter:image" content="https://gomimountain.ge/hero.jpg">
+  <meta name="twitter:image" id="twitter-image" content="">
   
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://gomimountain.ge">
+  <link rel="canonical" id="canonical-url" href="">
   
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="manifest" href="site.webmanifest">
+  
+  <script type="application/ld+json" id="structured-data">
   {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Cotria Cottage",
     "alternateName": "Gomi Mountain Cottage",
     "description": "A peaceful mountain cottage in Gomismta, Georgia with stunning views, 4 bedrooms, and modern amenities. Perfect for families and nature lovers.",
-    "url": "https://gomimountain.ge",
+    "url": "",
     "telephone": "+995558488227",
     "email": "kenjgc@gmail.com",
     "address": {
@@ -77,11 +85,7 @@
       "bestRating": "5",
       "worstRating": "1"
     },
-    "image": [
-      "https://gomimountain.ge/hero.jpg",
-      "https://gomimountain.ge/photo1.jpg",
-      "https://gomimountain.ge/photo2.jpg"
-    ],
+    "image": [],
     "sameAs": [
       "https://www.facebook.com/cottagecotria",
       "https://www.instagram.com/cotrias_cottage",
@@ -164,6 +168,100 @@
     .gallery img {
       width: 100%;
       border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      animation: fadeIn 0.3s ease;
+    }
+    .modal-content {
+      position: relative;
+      margin: auto;
+      padding: 20px;
+      max-width: 90%;
+      max-height: 90%;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+    .modal img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .modal .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .modal .close:hover {
+      color: var(--accent);
+    }
+    .modal .prev, .modal .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 16px;
+      user-select: none;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+    .modal .prev {
+      left: 20px;
+    }
+    .modal .next {
+      right: 20px;
+    }
+    .modal .prev:hover, .modal .next:hover {
+      background: var(--accent);
+    }
+    .modal-caption {
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @media (max-width: 768px) {
+      .modal .prev, .modal .next {
+        font-size: 24px;
+        padding: 12px;
+      }
+      .modal .close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+      }
     }
     .amenities ul {
       list-style: none;
@@ -222,11 +320,41 @@
       background: var(--accent);
       border-color: var(--accent);
     }
+    
+    /* Logo Styles */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+    .logo img {
+      height: 60px;
+      width: auto;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    
+    @media (max-width: 768px) {
+      .logo img {
+        height: 50px;
+      }
+      .language-switcher {
+        top: 15px;
+        right: 15px;
+      }
+      .logo {
+        top: 15px;
+        left: 15px;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
+  <div class="logo">
+    <img src="photos/logo.png" alt="Cotria Cottage Logo" />
+  </div>
   <div class="language-switcher">
     <button onclick="switchLanguage('en')" class="active" id="btn-en">EN</button>
     <button onclick="switchLanguage('ka')" id="btn-ka">ქარ</button>
@@ -252,12 +380,27 @@
 <section>
   <h2 data-en="Photo Gallery - Experience Cotria Cottage" data-ka="ფოტო გალერეა - იხილეთ კოტრიას კოტეჯი">Photo Gallery - Experience Cotria Cottage</h2>
   <div class="gallery">
-    <img src="photo1.jpg" alt="Cotria Cottage cozy living room with mountain views in Gomismta" loading="lazy">
-    <img src="photo2.jpg" alt="Breathtaking mountain and sea views from Cotria Cottage balcony" loading="lazy">
-    <img src="photo3.jpg" alt="Comfortable bedroom at Cotria Cottage mountain retreat" loading="lazy">
-    <img src="photo4.jpg" alt="Fully equipped kitchen at Cotria Cottage in Gomismta" loading="lazy">
+    <img src="photos/house/exterior1.jpg" alt="Exterior view of Cotria Cottage in Gomismta mountains" loading="lazy" onclick="openModal(this)">
+    <img src="photos/house/interior1.avif" alt="Interior design and furnishing at Cotria Cottage" loading="lazy" onclick="openModal(this)">
+    <img src="photos/house/interior2.jpg" alt="Another beautiful interior view of Cotria Cottage" loading="lazy" onclick="openModal(this)">
+    <img src="photos/house/bathroom.jpeg" alt="Modern bathroom facilities at Cotria Cottage" loading="lazy" onclick="openModal(this)">
+    <img src="photos/house/room1.jpeg" alt="Cozy bedroom at Cotria Cottage" loading="lazy" onclick="openModal(this)">
+    <img src="photos/house/room2.jpeg" alt="Spacious bedroom at Cotria Cottage" loading="lazy" onclick="openModal(this)">
+    <img src="photos/house/room3.jpeg" alt="Elegant bedroom at Cotria Cottage" loading="lazy" onclick="openModal(this)">
+    <img src="photos/house/room4.jpeg" alt="Charming bedroom at Cotria Cottage" loading="lazy" onclick="openModal(this)">
   </div>
 </section>
+
+<!-- Modal for Image Zoom -->
+<div id="imageModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+    <span class="next" onclick="changeImage(1)">&#10095;</span>
+    <img id="modalImage" src="" alt="">
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+</div>
 
 <section class="amenities">
   <h2 data-en="Cottage Amenities & Features" data-ka="კოტეჯის საცხოვრებელი პირობები და შესაძლებლობები">Cottage Amenities & Features</h2>
@@ -297,6 +440,123 @@
 
 <script>
   document.getElementById('currentYear').textContent = new Date().getFullYear();
+  
+  // Multi-domain support
+  const supportedDomains = [
+    'gomismta.com.ge',      // Main domain
+    'gomimountain.ge',      // Secondary domain
+    'gomismtacottage.ge'    // Secondary domain
+  ];
+  
+  // Get current domain and set up URLs dynamically
+  const currentDomain = window.location.hostname;
+  const protocol = window.location.protocol;
+  const currentUrl = `${protocol}//${currentDomain}`;
+  
+  // Determine if this is the main domain for canonical purposes
+  const mainDomain = 'gomismta.com.ge';
+  const canonicalUrl = `${protocol}//${mainDomain}`;
+  
+  // Update meta tags with current domain
+  function updateMetaTags() {
+    // Always use main domain for canonical URL (SEO best practice)
+    document.getElementById('canonical-url').href = canonicalUrl;
+    
+    // Update Open Graph URLs with current domain
+    document.getElementById('og-url').content = currentUrl;
+    document.getElementById('og-image').content = `${currentUrl}/hero.jpg`;
+    
+    // Update Twitter image with current domain
+    document.getElementById('twitter-image').content = `${currentUrl}/hero.jpg`;
+    
+    // Update structured data
+    const structuredData = document.getElementById('structured-data');
+    const data = JSON.parse(structuredData.textContent);
+    data.url = canonicalUrl; // Use main domain for structured data
+    data.image = [
+      `${currentUrl}/hero.jpg`,
+      `${currentUrl}/photos/house/exterior1.jpg`,
+      `${currentUrl}/photos/house/interior1.avif`
+    ];
+    structuredData.textContent = JSON.stringify(data, null, 2);
+    
+    // Add domain info to console for debugging
+    console.log(`Current domain: ${currentDomain}`);
+    console.log(`Main domain: ${mainDomain}`);
+    console.log(`Canonical URL: ${canonicalUrl}`);
+  }
+  
+  // Call the function to update meta tags
+  updateMetaTags();
+  
+  // Image Modal Functionality
+  let currentImageIndex = 0;
+  const galleryImages = document.querySelectorAll('.gallery img');
+  
+  function openModal(img) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    
+    // Find the index of the clicked image
+    currentImageIndex = Array.from(galleryImages).indexOf(img);
+    
+    modal.style.display = 'block';
+    modalImg.src = img.src;
+    modalCaption.textContent = img.alt;
+    
+    // Prevent body scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+  
+  function changeImage(direction) {
+    currentImageIndex += direction;
+    
+    // Loop around if at beginning or end
+    if (currentImageIndex >= galleryImages.length) {
+      currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+      currentImageIndex = galleryImages.length - 1;
+    }
+    
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const currentImg = galleryImages[currentImageIndex];
+    
+    modalImg.src = currentImg.src;
+    modalCaption.textContent = currentImg.alt;
+  }
+  
+  // Close modal when clicking outside the image
+  document.getElementById('imageModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    const modal = document.getElementById('imageModal');
+    if (modal.style.display === 'block') {
+      switch(e.key) {
+        case 'Escape':
+          closeModal();
+          break;
+        case 'ArrowLeft':
+          changeImage(-1);
+          break;
+        case 'ArrowRight':
+          changeImage(1);
+          break;
+      }
+    }
+  });
   
   // Language switching functionality
   let currentLanguage = 'en';
