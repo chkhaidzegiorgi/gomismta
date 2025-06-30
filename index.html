@@ -1,184 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cotria Cottage | Gomismta</title>
-    <style>
-      :root {
-        --green: #2d4739;
-        --light: #f4f1ed;
-        --accent: #bfa37c;
-      }
-      body {
-        margin: 0;
-        font-family: "Georgia", serif;
-        background: var(--light);
-        color: #333;
-      }
-      header {
-        background: url("hero.jpg") center/cover no-repeat;
-        height: 90vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        position: relative;
-      }
-      header::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-      }
-      header h1,
-      header p,
-      .cta-buttons {
-        position: relative;
-        z-index: 1;
-      }
-      header h1 {
-        font-size: 3.2em;
-        margin: 0;
-        color: #fff;
-      }
-      header p {
-        font-size: 1.2em;
-        margin: 10px 0 20px;
-        color: #e0e0e0;
-      }
-      .cta-buttons a {
-        display: inline-block;
-        background: var(--accent);
-        color: #fff;
-        padding: 12px 24px;
-        margin: 6px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background 0.3s;
-      }
-      .cta-buttons a:hover {
-        background: #a98863;
-      }
-      section {
-        padding: 60px 20px;
-        max-width: 1000px;
-        margin: auto;
-      }
-      h2 {
-        text-align: center;
-        color: var(--green);
-        margin-bottom: 20px;
-      }
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 16px;
-      }
-      .gallery img {
-        width: 100%;
-        border-radius: 8px;
-      }
-      .amenities ul {
-        list-style: none;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px;
-      }
-      .amenities li {
-        background: #fff;
-        padding: 12px;
-        border-left: 4px solid var(--accent);
-        border-radius: 4px;
-      }
-      iframe {
-        width: 100%;
-        height: 300px;
-        border: 0;
-        border-radius: 8px;
-        margin-top: 20px;
-      }
-      footer {
-        background: var(--green);
-        color: #fff;
-        text-align: center;
-        padding: 30px 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Gomi Mountain Cottage</h1>
-      <p>Unwind in the clouds of Gomismta</p>
-      <div class="cta-buttons">
-        <a href="https://airbnb.com/rooms/37929350" target="_blank">Airbnb</a>
-        <a href="https://booking.com" target="_blank">Booking.com</a>
-        <a href="https://facebook.com" target="_blank">Facebook</a>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Cotria Cottage Gomismta | Mountain Retreat Georgia | Book Now</title>
+  <meta name="description" id="page-description" content="Book Cotria Cottage in Gomismta, Georgia - A peaceful mountain retreat with stunning views, 4 bedrooms, sleeps 9, fully equipped kitchen, pet-friendly. Available on Airbnb & Booking.com. Best rates guaranteed.">
+  <meta name="keywords" content="Gomismta cottage rental, mountain cabin Georgia, Cotria cottage, Gomismta accommodation, Georgia vacation rental, mountain retreat booking, Guria region stays, pet-friendly cottage Georgia">
+  <meta name="author" content="Giorgi Chkhaidze">
+  <meta name="geo.region" content="GE-GU">
+  <meta name="geo.placename" content="Gomismta, Guria, Georgia">
+  <meta name="geo.position" content="41.8212614;42.1587826">
+  <meta name="ICBM" content="41.8212614, 42.1587826">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cotria Cottage Gomismta | Mountain Retreat in Georgia">
+  <meta property="og:description" content="Escape to Cotria Cottage in Gomismta - a cozy mountain retreat with breathtaking views, 4 bedrooms, and modern amenities. Book your stay today!">
+  <meta property="og:image" content="https://gomimountain.ge/hero.jpg">
+  <meta property="og:url" content="https://gomimountain.ge">
+  <meta property="og:site_name" content="Gomi Mountain Cottage">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cotria Cottage Gomismta | Mountain Retreat Georgia">
+  <meta name="twitter:description" content="Book your mountain escape at Cotria Cottage in Gomismta, Georgia. Stunning views, 4 bedrooms, pet-friendly.">
+  <meta name="twitter:image" content="https://gomimountain.ge/hero.jpg">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://gomimountain.ge">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Cotria Cottage",
+    "alternateName": "Gomi Mountain Cottage",
+    "description": "A peaceful mountain cottage in Gomismta, Georgia with stunning views, 4 bedrooms, and modern amenities. Perfect for families and nature lovers.",
+    "url": "https://gomimountain.ge",
+    "telephone": "+995558488227",
+    "email": "kenjgc@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gomismta",
+      "addressRegion": "Guria",
+      "addressCountry": "GE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.8212614,
+      "longitude": 42.1587826
+    },
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Mountain view"},
+      {"@type": "LocationFeatureSpecification", "name": "Sea view"},
+      {"@type": "LocationFeatureSpecification", "name": "Free WiFi"},
+      {"@type": "LocationFeatureSpecification", "name": "Kitchen"},
+      {"@type": "LocationFeatureSpecification", "name": "Free parking"},
+      {"@type": "LocationFeatureSpecification", "name": "Pet friendly"},
+      {"@type": "LocationFeatureSpecification", "name": "Heating"},
+      {"@type": "LocationFeatureSpecification", "name": "Fireplace"}
+    ],
+    "numberOfRooms": 4,
+    "maximumAttendeeCapacity": 9,
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "4.82",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.82",
+      "reviewCount": "11",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "image": [
+      "https://gomimountain.ge/hero.jpg",
+      "https://gomimountain.ge/photo1.jpg",
+      "https://gomimountain.ge/photo2.jpg"
+    ],
+    "sameAs": [
+      "https://www.facebook.com/cottagecotria",
+      "https://www.instagram.com/cotrias_cottage",
+      "https://www.airbnb.com/rooms/37929350"
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --green: #2d4739;
+      --light: #f4f1ed;
+      --accent: #bfa37c;
+    }
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: var(--light);
+      color: #333;
+    }
+    header {
+      background: url('hero.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    header h1, header p, .cta-buttons {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 3.2em;
+      margin: 0;
+      color: #fff;
+    }
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+      color: #e0e0e0;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 24px;
+      margin: 6px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .cta-buttons a:hover {
+      background: #a98863;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: var(--green);
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .amenities ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .amenities li {
+      background: #fff;
+      padding: 12px;
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    footer {
+      background: var(--green);
+      color: #fff;
+      text-align: center;
+      padding: 30px 10px;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    
+    /* Language Switcher */
+    .language-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+    .language-switcher button {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 8px 12px;
+      margin: 0 2px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .language-switcher button:hover,
+    .language-switcher button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
 
-    <section>
-      <h2>About This Space</h2>
-      <p>
-        Welcome to Cotria, your peaceful mountain escape in Gomismta, Georgia.
-        With stunning views, cozy interiors, and all the essentials, this
-        cottage is perfect for a relaxing holiday. It includes 4 bedrooms, 1
-        sofa-bed (sleeps 9), a well-equipped kitchen, and a spacious living room
-        with panoramic windows.
-      </p>
-    </section>
+<header>
+  <div class="language-switcher">
+    <button onclick="switchLanguage('en')" class="active" id="btn-en">EN</button>
+    <button onclick="switchLanguage('ka')" id="btn-ka">ქარ</button>
+  </div>
+  <h1 data-en="Cotria Cottage - Mountain Retreat in Gomismta, Georgia" data-ka="კოტრიას კოტეჯი - მთის ტურიზმი გომისმთაში, საქართველო">Cotria Cottage - Mountain Retreat in Gomismta, Georgia</h1>
+  <p data-en="Unwind in the clouds of Gomismta - Your perfect mountain escape" data-ka="დაისვენეთ გომისმთის ღრუბლებში - თქვენი იდეალური მთის თავშესაფარი">Unwind in the clouds of Gomismta - Your perfect mountain escape</p>
+  <div class="cta-buttons">
+    <a href="https://www.airbnb.com/rooms/37929350?guests=1&adults=1&s=67&unique_share_id=4f9fe6e3-713d-4ad6-9dd3-518fdf857801" target="_blank" rel="noopener" aria-label="Book Cotria Cottage on Airbnb" data-en="Book on Airbnb" data-ka="დაჯავშნეთ Airbnb-ზე">Book on Airbnb</a>
+    <a href="https://www.booking.com/hotel/ge/cotrias-cottage-at-gomismta-gomi.en-gb.html?aid=898224&app_hotel_id=12438010&checkin=2025-07-28&checkout=2025-07-29&from_sn=ios&group_adults=7&group_children=0&label=hotel_details-bqK4nf%401751278814&no_rooms=3&req_adults=7&req_children=0&room1=A%2CA%2CA%2CA%2CA%2CA%2CA%2C" target="_blank" rel="noopener" aria-label="Book Cotria Cottage on Booking.com" data-en="Book on Booking.com" data-ka="დაჯავშნეთ Booking.com-ზე">Book on Booking.com</a>
+    <a href="https://www.instagram.com/cotrias_cottage?fbclid=IwY2xjawLPQ-JleHRuA2FlbQIxMABicmlkETF6QkhQbmM4ZVR5QnREYUxwAR6mppwZhvdxcc26hzI0-rR8ojKETYek2ldLk7o3JFWDGs0RG7PAsy49GXbt9w_aem_fvQs7s4qCdSYDfYKNaXOAQ" target="_blank" rel="noopener" aria-label="Follow Cotria Cottage on Instagram" data-en="Follow on Instagram" data-ka="გამოგვყევით Instagram-ზე">Follow on Instagram</a>
+    <a href="https://www.facebook.com/cottagecotria" target="_blank" rel="noopener" aria-label="Visit Cotria Cottage Facebook page" data-en="Visit Facebook" data-ka="ეწვიეთ Facebook-ს">Visit Facebook</a>
+  </div>
+</header>
 
-    <section>
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="photo1.jpg" alt="Living Room" />
-        <img src="photo2.jpg" alt="Mountain View" />
-        <img src="photo3.jpg" alt="Bedroom" />
-        <img src="photo4.jpg" alt="Kitchen" />
-      </div>
-    </section>
+<main>
+<section itemscope itemtype="https://schema.org/LodgingBusiness">
+  <h2 data-en="About Cotria Cottage - Your Mountain Retreat in Gomismta" data-ka="კოტრიას კოტეჯის შესახებ - თქვენი მთის თავშესაფარი გომისმთაში">About Cotria Cottage - Your Mountain Retreat in Gomismta</h2>
+  <p data-en="Welcome to Cotria Cottage, your peaceful mountain escape in Gomismta, Guria, Georgia. With stunning panoramic views, cozy interiors, and all modern essentials, this cottage is perfect for a relaxing holiday in the Georgian mountains." data-ka="კეთილი იყოს თქვენი მობრძანება კოტრიას კოტეჯში, თქვენს მშვიდ მთის თავშესაფარში გომისმთაში, გურია, საქართველო. განსაცვიფრებელი პანორამული ხედებით, მყუდრო ინტერიერით და ყველა თანამেიდროვე საჭიროებით, ეს კოტეჯი იდეალურია მშვიდი შვებულებისთვის ქართულ მთებში.">Welcome to <span itemprop="name">Cotria Cottage</span>, your peaceful mountain escape in <span itemprop="addressLocality">Gomismta</span>, <span itemprop="addressRegion">Guria</span>, <span itemprop="addressCountry">Georgia</span>. With stunning panoramic views, cozy interiors, and all modern essentials, this cottage is perfect for a relaxing holiday in the Georgian mountains.</p>
+  <p data-en="Our 4-bedroom mountain cottage includes 1 sofa-bed (accommodates up to 9 guests), a well-equipped kitchen, and a spacious living room with panoramic windows overlooking the breathtaking landscape of Guria region." data-ka="ჩვენი 4-საძინებელი მთის კოტეჯი მოიცავს 1 დივან-საწოლს (ვარგია 9 სტუმრამდე), კარგად აღჭურვილ სამზარეულოს და ფართო სასტუმრო ოთახს პანორამული ფანჯრებით გურიის რეგიონის მშვენიერ პეიზაჟზე.">Our <strong>4-bedroom mountain cottage</strong> includes 1 sofa-bed (accommodates up to <span itemprop="maximumAttendeeCapacity">9 guests</span>), a well-equipped kitchen, and a spacious living room with panoramic windows overlooking the breathtaking landscape of Guria region.</p>
+  <p data-en="Located in the beautiful mountainous region of Guria, Cotria Cottage offers a tranquil getaway for couples, families, and groups. Whether you're here to hike mountain trails, unwind in nature, or enjoy fresh mountain air and cloud-sea views, you'll feel right at home in our mountain retreat." data-ka="გურიის მშვენიერ მთიან რეგიონში განთავსებული, კოტრიას კოტეჯი გთავაზობთ მშვიდ გასვლას წყვილებისთვის, ოჯახებისთვის და ჯგუფებისთვის. იქნება ეს მთის ბილიკებზე სირბილი, ბუნებაში დასვენება, ან მთის სუფთა ჰაერისა და ღრუბლების ზღვის ხედების ტკბობა - თქვენ იგრძნობთ თავს სახლში ჩვენს მთის თავშესაფარში.">Located in the beautiful mountainous region of Guria, Cotria Cottage offers a tranquil getaway for couples, families, and groups. Whether you're here to hike mountain trails, unwind in nature, or enjoy fresh mountain air and cloud-sea views, you'll feel right at home in our mountain retreat.</p>
+</section>
 
-    <section class="amenities">
-      <h2>Amenities</h2>
-      <ul>
-        <li>🌄 Mountain view</li>
-        <li>🌊 Sea view</li>
-        <li>🚿 Bathroom with hot water</li>
-        <li>🧴 Hair dryer & shampoo</li>
-        <li>🧺 Washer</li>
-        <li>🧻 Essentials (towels, bed sheets, soap, toilet paper)</li>
-        <li>🧥 Hangers & bed linens</li>
-        <li>🛌 Extra pillows and blankets</li>
-        <li>🔥 Heating</li>
-        <li>🍳 Fully equipped kitchen</li>
-        <li>🍽️ Space to cook your own meals</li>
-        <li>🚪 Private entrance</li>
-        <li>🌿 Backyard / open space</li>
-        <li>🅿️ Free parking on premises</li>
-        <li>🐶 Pets allowed</li>
-        <li>👋 Host greets you on arrival</li>
-      </ul>
-    </section>
+<section>
+  <h2 data-en="Photo Gallery - Experience Cotria Cottage" data-ka="ფოტო გალერეა - იხილეთ კოტრიას კოტეჯი">Photo Gallery - Experience Cotria Cottage</h2>
+  <div class="gallery">
+    <img src="photo1.jpg" alt="Cotria Cottage cozy living room with mountain views in Gomismta" loading="lazy">
+    <img src="photo2.jpg" alt="Breathtaking mountain and sea views from Cotria Cottage balcony" loading="lazy">
+    <img src="photo3.jpg" alt="Comfortable bedroom at Cotria Cottage mountain retreat" loading="lazy">
+    <img src="photo4.jpg" alt="Fully equipped kitchen at Cotria Cottage in Gomismta" loading="lazy">
+  </div>
+</section>
 
-    <section>
-      <h2>Location</h2>
-      <p>
-        Located in upper Gomismta, accessible by car. The best season to visit
-        is May to September for dreamlike views and great weather.
-      </p>
-      <iframe
-        src="https://www.google.com/maps/embed?..."
-        allowfullscreen
-      ></iframe>
-    </section>
+<section class="amenities">
+  <h2 data-en="Cottage Amenities & Features" data-ka="კოტეჯის საცხოვრებელი პირობები და შესაძლებლობები">Cottage Amenities & Features</h2>
+  <ul>
+    <li data-en="🌄 Stunning mountain views - Panoramic vistas of Georgian mountains" data-ka="🌄 შთამბეჭდავი მთის ხედები - ქართული მთების პანორამული ხედები">🌄 <strong>Stunning mountain views</strong> - Panoramic vistas of Georgian mountains</li>
+    <li data-en="🌊 Sea view - Glimpses of Black Sea on clear days" data-ka="🌊 ზღვის ხედი - შავი ზღვის ხედი მზიან დღეებში">🌊 <strong>Sea view</strong> - Glimpses of Black Sea on clear days</li>
+    <li data-en="🚿 Modern bathroom with hot water system" data-ka="🚿 თანამედროვე აბაზანა ცხელი წყლის სისტემით">🚿 <strong>Modern bathroom</strong> with hot water system</li>
+    <li data-en="🧴 Hair dryer & premium shampoo provided" data-ka="🧴 თმის საშრობი და პრემიუმ შამპუნი">🧴 Hair dryer & premium shampoo provided</li>
+    <li data-en="🧺 Washing machine for longer stays" data-ka="🧺 სარეცხი მანქანა ხანგრძლივი ყოფნისთვის">🧺 Washing machine for longer stays</li>
+    <li data-en="🧻 All essentials included - towels, bed sheets, soap, toilet paper" data-ka="🧻 ყველა საჭიროება - პირსახოცები, ლოგინი, საპონი, ტუალეტის ქაღალდი">🧻 <strong>All essentials included</strong> - towels, bed sheets, soap, toilet paper</li>
+    <li data-en="🧥 Wardrobes with hangers & quality bed linens" data-ka="🧥 კარადები ვეშაგებით და ხარისხიანი საწოლი თეთრეული">🧥 Wardrobes with hangers & quality bed linens</li>
+    <li data-en="🛌 Extra pillows and warm blankets" data-ka="🛌 დამატებითი ბალიშები და თბილი საბნები">🛌 Extra pillows and warm blankets</li>
+    <li data-en="🔥 Cozy fireplace for mountain evenings" data-ka="🔥 მყუდრო ბუხარი მთის საღამოებისთვის">🔥 <strong>Cozy fireplace</strong> for mountain evenings</li>
+    <li data-en="🍳 Fully equipped kitchen - cook your own meals" data-ka="🍳 სრულად აღჭურვილი სამზარეულო - მოამზადეთ საკუთარი კერძები">🍳 <strong>Fully equipped kitchen</strong> - cook your own meals</li>
+    <li data-en="🍽️ Dining space for family meals" data-ka="🍽️ სასადილო ადგილი ოჯახური ღონისძიებებისთვის">🍽️ Dining space for family meals</li>
+    <li data-en="🚪 Private entrance - complete privacy" data-ka="🚪 კერძო შესასვლელი - სრული კონფიდენციალურობა">🚪 <strong>Private entrance</strong> - complete privacy</li>
+    <li data-en="🌿 Private backyard with open green space" data-ka="🌿 კერძო ეზო ღია მწვანე სივრცით">🌿 <strong>Private backyard</strong> with open green space</li>
+    <li data-en="🅿️ Free parking on premises" data-ka="🅿️ უფასო პარკინგი ტერიტორიაზე">🅿️ <strong>Free parking</strong> on premises</li>
+    <li data-en="🐶 Pet-friendly - bring your furry friends" data-ka="🐶 შინაური ცხოველები მისაღებია - მოიყვანეთ ნაცნობი მეგობრები">🐶 <strong>Pet-friendly</strong> - bring your furry friends</li>
+    <li data-en="👋 Personal host greeting on arrival" data-ka="👋 პირადი მასპინძლის მისალმება ჩამოსვლისას">👋 Personal host greeting on arrival</li>
+  </ul>
+</section>
 
-    <footer>
-      <p>Contact: +995 123 456 789 | gomimountain@gmail.com</p>
-      <p>&copy; 2025 Gomi Mountain Cottage</p>
-    </footer>
-  </body>
+<section>
+  <h2 data-en="Location & Directions to Gomismta" data-ka="მდებარეობა და მიმართულება გომისმთაში">Location & Directions to Gomismta</h2>
+  <p data-en="Cotria Cottage is located in upper Gomismta, Guria region, Georgia - easily accessible by car year-round. The cottage sits at an elevated position offering spectacular views of the surrounding mountains and occasional glimpses of the Black Sea." data-ka="კოტრიას კოტეჯი განთავსებულია ზემო გომისმთაში, გურიის რეგიონში, საქართველო - ადვილად მისაწვდომია მანქანით მთელი წლის განმავლობაში. კოტეჯი განთავსებულია მაღალ ადგილზე და იძლევა შემოგარენის მთების დამამშვიდებელ ხედებს და ზოგჯერ შავი ზღვის ხედებსაც."><strong>Cotria Cottage is located in upper Gomismta, Guria region, Georgia</strong> - easily accessible by car year-round. The cottage sits at an elevated position offering spectacular views of the surrounding mountains and occasional glimpses of the Black Sea.</p>
+  <p data-en="Best time to visit: May to September for dreamlike cloud-sea views and perfect weather for hiking. Experience the natural beauty of Guria region with its hiking trails, pristine mountain air, and rich cultural heritage." data-ka="ვიზიტის საუკეთესო დრო: მაისი-სექტემბერი ღრუბლების ზღვის ცისფერი ხედებისთვის და ფეხით სიარულისთვის იდეალური ამინდისთვის. გამოცადეთ გურიის რეგიონის ბუნებრივი სილამაზე მისი ფეხით სიარულის ბილიკებით, სუფთა მთის ჰაერით და მდიდარი კულტურული მემკვიდრეობით."><strong>Best time to visit:</strong> May to September for dreamlike cloud-sea views and perfect weather for hiking. Experience the natural beauty of Guria region with its hiking trails, pristine mountain air, and rich cultural heritage.</p>
+  <p data-en="Distance from major cities: Accessible from Ozurgeti (closest city), Batumi, and Kutaisi. Perfect location for exploring western Georgia's natural attractions." data-ka="მანძილი მთავარ ქალაქებამდე: მისაწვდომია ოზურგეთიდან (უახლოესი ქალაქი), ბათუმიდან და ქუთაისიდან. იდეალური ადგილი დასავლეთ საქართველოს ბუნებრივი ღირსშესანიშნაობების მოსანახულებლად."><strong>Distance from major cities:</strong> Accessible from Ozurgeti (closest city), Batumi, and Kutaisi. Perfect location for exploring western Georgia's natural attractions.</p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.349698984151!2d42.1562077!3d41.8212614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405d1540e47d07f1%3A0x24f89718a52fb767!2sCotria%E2%80%99s%20cottage!5e0!3m2!1sen!2sge!4v1719858000000!5m2!1sen!2sge" allowfullscreen title="Location of Cotria Cottage in Gomismta, Georgia" loading="lazy"></iframe>
+</section>
+</main>
+
+<footer>
+  <p data-en="Contact: +995 558 488 227 | kenjgc@gmail.com" data-ka="კონტაქტი: +995 558 488 227 | kenjgc@gmail.com">Contact: <a href="tel:+995558488227">+995 558 488 227</a> | <a href="mailto:kenjgc@gmail.com">kenjgc@gmail.com</a></p>
+  <p data-en="© 2025 Gomi Mountain Cottage" data-ka="© 2025 გომის მთის კოტეჯი">&copy; <span id="currentYear"></span> <span data-en="Gomi Mountain Cottage" data-ka="გომის მთის კოტეჯი">Gomi Mountain Cottage</span></p>
+</footer>
+
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+  
+  // Language switching functionality
+  let currentLanguage = 'en';
+  
+  const translations = {
+    title: {
+      en: "Cotria Cottage Gomismta | Mountain Retreat Georgia | Book Now",
+      ka: "კოტრიას კოტეჯი გომისმთა | მთის ტურიზმი საქართველო | დაჯავშნეთ ახლა"
+    },
+    description: {
+      en: "Book Cotria Cottage in Gomismta, Georgia - A peaceful mountain retreat with stunning views, 4 bedrooms, sleeps 9, fully equipped kitchen, pet-friendly. Available on Airbnb & Booking.com. Best rates guaranteed.",
+      ka: "დაჯავშნეთ კოტრიას კოტეჯი გომისმთაში, საქართველო - მშვიდი მთის თავშესაფარი შთამბეჭდავი ხედებით, 4 საძინებელი, 9 ადგილი, სრულად აღჭურვილი სამზარეულო, შინაური ცხოველები მისაღებია. ხელმისაწვდომია Airbnb და Booking.com-ზე."
+    }
+  };
+  
+  function switchLanguage(lang) {
+    currentLanguage = lang;
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang === 'ka' ? 'ka' : 'en';
+    
+    // Update meta tags
+    document.getElementById('page-title').textContent = translations.title[lang];
+    document.getElementById('page-description').setAttribute('content', translations.description[lang]);
+    
+    // Update button states
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-ka').classList.toggle('active', lang === 'ka');
+    
+    // Update all elements with data attributes
+    const elements = document.querySelectorAll('[data-en][data-ka]');
+    elements.forEach(element => {
+      if (element.tagName === 'A') {
+        element.textContent = element.getAttribute('data-' + lang);
+      } else {
+        element.innerHTML = element.getAttribute('data-' + lang);
+      }
+    });
+    
+    // Store language preference
+    localStorage.setItem('preferredLanguage', lang);
+  }
+  
+  // Load saved language preference on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang && savedLang !== 'en') {
+      switchLanguage(savedLang);
+    }
+  });
+</script>
+
+</body>
 </html>
